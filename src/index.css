@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #15202B;
+    --bg-secondary: #1E2A37;
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .dark {
+    --bg-primary: #15202B;
+    --bg-secondary: #1E2A37;
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+  }
+
+  .light {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F1F5F9;
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1D9BF0] to-[#1A8CD8];
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
